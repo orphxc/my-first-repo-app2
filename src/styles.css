@@ -1,1 +1,171 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===============================
+   GLOBAL STYLES
+================================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  text-align: center;
+}
+
+header {
+  padding: 60px 20px 20px;
+}
+
+header h1,
+header h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+header p.motto {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+header p.select-leader {
+  font-size: 1rem;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+/* ===============================
+   FLEX CONTAINER – SIDE BY SIDE
+================================= */
+.leaders-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;      /* spacing between cards */
+  margin: 60px auto;
+  padding: 0 20px;
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+/* ===============================
+   HEXAGON / SHAPE CARD
+================================= */
+.leader-card {
+  position: relative;
+  width: 280px;
+  height: 320px;
+  background: #ffffff;
+
+  /* Hexagon-inspired shape */
+  clip-path: polygon(
+    25% 0%, 
+    75% 0%, 
+    100% 50%, 
+    75% 100%, 
+    25% 100%, 
+    0% 50%
+  );
+
+  box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.leader-card:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   TYPE VARIANTS
+================================= */
+.water {
+  border: 4px solid #3b82f6;
+}
+
+.fire {
+  border: 4px solid #ef4444;
+}
+
+/* ===============================
+   FLOATING IMAGE
+================================= */
+.leader-img {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ===============================
+   TEXT STYLES
+================================= */
+.leader-title {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #64748b;
+}
+
+.leader-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 5px 0 10px;
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   TEAM LIST
+================================= */
+.team-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.team-list li {
+  margin: 3px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ===============================
+   QUOTE
+================================= */
+.quote {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 1000px) {
+  .leaders-container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .leaders-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

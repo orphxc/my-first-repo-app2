@@ -1,0 +1,17 @@
+<h2>Kanto Gym Leaders</h2>
+<ul>
+    @for (leader of gymLeaders(); track leader.name) {
+        <li><h3>{{ leader.name }}</h3></li>
+        <li><h3>{{leader.age}}</h3></li>
+        <ul>
+            <h4>Pokemon Team: </h4>
+            @for (pokemon of leader.pokemon; track pokemon) {
+                <li>{{pokemon.name}}</li>
+            }
+            <li> Badge: {{leader.badge}}</li>
+            <li>Location: {{leader.location}}</li>
+        </ul>
+    }
+</ul>
+
+    

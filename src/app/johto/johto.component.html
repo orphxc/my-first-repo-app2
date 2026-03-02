@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="leader-cards">
+    <h2>Johto Gym Leaders</h2>
+    <ul>
+        @for (leader of gymLeaders(); track leader.name) {
+            <li class="leader-card">
+                <h3>{{ leader.name }}</h3>
+                <p>Age: {{ leader.age }}</p>
+                <ul>
+                    <h4>Pokemon Team: </h4>
+                    @for (pokemon of leader.pokemon; track pokemon) {
+                        <li>{{ pokemon.name }}</li>
+                    }
+                    <li> Badge: {{ leader.badge }}</li>
+                    <li>Location: {{ leader.location }}</li>
+                </ul>
+                <button>View Motto</button>
+            </li>
+        }
+    </ul>
+  </div>
+
+  <div class="info-panel">
+    <p>Select a leader to see their motto.</p>
+  </div>
+</div>
