@@ -1,8 +1,8 @@
-<h2>Johto Gym Leaders</h2>
+<h2>Hoenn Gym Leaders</h2>
 <p class="motto-display">{{ activeMotto() }}</p>
 
 <div class="leaders-container">
-  @for (leader of leaders; track leader.name) {
+  @for (leader of hoennLeaders(); track leader.name) {
     <app-leader-info 
       [name]="leader.name" 
       [age]="leader.age"

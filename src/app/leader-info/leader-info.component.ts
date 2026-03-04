@@ -1,9 +1,10 @@
-import { Component, input, output } from '@angular/core';
+import { Component, input, output, computed } from '@angular/core';
 
 @Component({
   selector: 'app-leader-info',
   standalone: true,
-  templateUrl: './leader-info.component.html'
+  templateUrl: './leader-info.component.html',
+  styleUrls: ['./leader-info.component.css']
 })
 export class LeaderInfoComponent {
   name = input.required<string>();
@@ -15,7 +16,23 @@ export class LeaderInfoComponent {
 
   showMotto = output<string>();
 
+
+  getTeamArray(): string[] {
+    return this.team().split(',').map(item => item.trim());
+  }
+
+ 
+  getTeamGrid(): string[] {
+    const items = this.getTeamArray();
+    const padded = [...items];
+    while (padded.length < 8) {
+      padded.push(''); 
+    }
+    return padded;
+  }
+
   triggerMotto() {
     this.showMotto.emit(this.motto());
   }
 }
+

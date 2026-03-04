@@ -1,10 +1,22 @@
-<div class="container">
-  <div class="leader-card">
-    <h3>{{ name() }}</h3>
-    <p>Age: {{age()}}</p>
-    <p>Location: {{ location() }}</p>
-    <p>Team: {{ team() }}</p>
-    <p>Badge: {{ badge() }}</p>
-    <button (click)="triggerMotto()">View Motto</button>
+<div class="leader-card">
+  <img src="assets/leader-placeholder.jpg" class="leader-img" alt="{{ name() }}">
+  
+  <div class="leader-title">{{ location() }}</div>
+  <h2 class="leader-name">{{ name() }}</h2>
+  
+  <div class="badge-icon">🏆</div>
+  
+  <div class="team-list">
+    <ul>
+      @for (pokemon of getTeamGrid(); track $index) {
+        <li>{{ pokemon }}</li>
+      }
+    </ul>
   </div>
+  
+ 
+  <p class="age">Age: {{ age() }}</p>
+  <p class="badge">Badge: {{ badge() }}</p>
+  <button class="motto-btn" (click)="triggerMotto()">View Motto</button>
+  <p class="quote">{{ motto() }}</p>
 </div>

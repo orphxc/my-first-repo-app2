@@ -1,0 +1,31 @@
+.motto-display {
+  font-size: 1.1rem;
+  color: #3b82f6;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.leaders-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 60px auto;
+  padding: 0 20px;
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .leaders-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .leaders-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

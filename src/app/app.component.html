@@ -1,11 +1,17 @@
 <main>
-  <h1>Pokemon Gym Leader</h1>
+  <header>
+    <h1>Pokemon Gym Leader</h1>
+    <p class="motto">Select a region to explore the Gym Leaders</p>
+  </header>
+
   <nav>
-  <a routerLink="/home" routerLinkActive="active">Home</a>
-  <a routerLink="/kanto" routerLinkActive="active">Kanto</a>
-  <a routerLink="/johto" routerLinkActive="active">Johto</a>
-</nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/kanto" routerLinkActive="active">Kanto</a>
+    <a routerLink="/johto" routerLinkActive="active">Johto</a>
+    <a routerLink="/hoenn" routerLinkActive="active">Hoenn</a>
+  </nav>
 
-<hr>
+  <hr>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</main>
