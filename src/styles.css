@@ -42,7 +42,7 @@ header p.select-leader {
 }
 
 /* ===============================
-   GRID LAYOUT – 4 COLUMNS
+   GRID LAYOUT – 4 COLUMNS (2 LINES)
 ================================= */
 .leaders-container {
   display: grid;
@@ -106,6 +106,16 @@ hr {
 /* ===============================
    LEADER CARD – SMALLER & COMPACT
 ================================= */
+.leaders-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns horizontally */
+  gap: 30px;
+  margin: 60px auto;
+  padding: 0 20px;
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
+}
 .leader-card {
   position: relative;
   width: 100%;
@@ -246,14 +256,6 @@ hr {
 /* ===============================
    RESPONSIVE
 ================================= */
-/* Tablet: 2 Columns */
-@media (max-width: 1200px) {
-  .leaders-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-}
-
 /* Mobile: 1 Column */
 @media (max-width: 600px) {
   .leaders-container {

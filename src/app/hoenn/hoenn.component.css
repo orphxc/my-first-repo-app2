@@ -1,3 +1,8 @@
+/* ===============================
+   HOENN COMPONENT STYLES
+================================= */
+
+/* Motto Display */
 .motto-display {
   font-size: 1.1rem;
   color: #3b82f6;
@@ -5,9 +10,12 @@
   margin: 20px 0;
 }
 
+/* ===============================
+   GRID LAYOUT – 4 COLUMNS (2 LINES)
+================================= */
 .leaders-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 columns horizontally */
   gap: 30px;
   margin: 60px auto;
   padding: 0 20px;
@@ -16,16 +24,150 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
-  .leaders-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
+/* ===============================
+   LEADER CARD
+================================= */
+.leader-card {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  min-height: 360px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.leader-img {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.leader-card:hover .leader-img {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.leader-title {
+  margin-top: 50px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.leader-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 5px 0 8px;
+  color: #111827;
+}
+
+.badge-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.team-list {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.team-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.team-list li {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 6px 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.team-list li:hover {
+  background: #e5e7eb;
+  transform: scale(1.05);
+}
+
+.age, .badge {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+.motto-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.motto-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.quote {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 8px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
 @media (max-width: 600px) {
   .leaders-container {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+  
+  .team-list ul {
+    grid-template-columns: 1fr;
   }
 }

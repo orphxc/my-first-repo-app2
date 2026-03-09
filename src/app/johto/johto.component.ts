@@ -16,7 +16,7 @@ interface GymLeader {
   imports: [LeaderInfoComponent],
   template: `
     <h2>Johto Gym Leaders</h2>
-    <p>{{ activeMotto() }}</p>
+    <p class="motto-display">{{ activeMotto() }}</p>
     @for (leader of leaders; track leader.name) {
       <app-leader-info 
         [name]="leader.name" 
@@ -42,8 +42,6 @@ export class JohtoComponent {
     { name: 'Pryce', age: 63, location: 'Mahogany Town', team: 'Seel, Dewgong, Piloswine', badge: 'Glacier', motto: 'The teacher of winter\'s harshness!' },
     { name: 'Clair', age: 27, location: 'Blackthorn City', team: 'Dragonair, Kingdra', badge: 'Rising', motto: 'The blessed user of dragon Pokémon!' }
 ];
-
-
 
   displayMotto(motto: string) {
     this.activeMotto.set(motto);

@@ -14,7 +14,10 @@ export interface HoennGymLeader {
   providedIn: 'root'
 })
 export class HoennComponentServices {
-  // Private signal for Hoenn leaders data
+  
+  // Add activeMotto signal to service
+  activeMotto = signal('Select a leader to see their motto.');
+
   private hoennLeaders = signal<HoennGymLeader[]>([
     { 
       name: 'Roxanne', 
@@ -108,12 +111,11 @@ export class HoennComponentServices {
     }
   ]);
 
-  // Public signal for accessing the data
   getHoennLeaders() {
     return this.hoennLeaders.asReadonly();
   }
 
-  // Get a single leader by name
+  // Fixed return type
   getLeaderByName(name: string): HoennGymLeader | undefined {
     return this.hoennLeaders().find(leader => leader.name === name);
   }
